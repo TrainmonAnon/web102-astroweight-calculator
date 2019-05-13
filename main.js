@@ -33,6 +33,7 @@ function createPlanetOption(planetName){
     var planet = document.createElement("option");
     var planetText = document.createTextNode(planetName);
     planet.appendChild(planetText);
+    planet.setAttribute("id", planetName);
 
     document.getElementById("planets").appendChild(planet);
 }
@@ -60,12 +61,8 @@ document.getElementById("calculate-button").onclick = handleClickEvent;
 // 9. Make it look nice using bootstrap (http://getbootstrap.com/getting-started/)
 
 function plutoClickEvent(){
-    if (document.getElementById("pluto-is-planet").checked == true){
-        document.getElementById("planets").options[10].disabled = false;
-    }
-    else{
-        document.getElementById("planets").options[10].disabled = true;
-    }
+    var pluto = document.getElementById("Pluto");
+    pluto.disabled = !pluto.disabled;
 }
 document.getElementById("pluto-is-planet").onclick = plutoClickEvent;
 
